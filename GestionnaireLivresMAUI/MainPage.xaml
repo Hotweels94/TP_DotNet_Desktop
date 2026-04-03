@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:GestionnaireLivresMAUI.ViewModels"
+             xmlns:models="clr-namespace:GestionnaireLivresMAUI.Models"
+             xmlns:converters="clr-namespace:GestionnaireLivresMAUI.Converters"
+             x:Class="GestionnaireLivresMAUI.MainPage"
+             x:DataType="viewModels:MainViewModel"
+             BackgroundColor="#0F172A">
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+
+			<converters:GenreToColorConverter x:Key="GenreToColorConverter"/>
+			<converters:BoolToStatusConverter x:Key="BoolToStatusConverter"/>
+
+			<Style x:Key="CardStyle" TargetType="Border">
+				<Setter Property="BackgroundColor" Value="#1E293B"/>
+				<Setter Property="Stroke" Value="#334155"/>
+				<Setter Property="StrokeShape" Value="RoundRectangle 18"/>
+				<Setter Property="Padding" Value="16"/>
+			</Style>
+
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<ScrollView>
+
+		<VerticalStackLayout Padding="20" Spacing="18">
+
+			<Border BackgroundColor="#1E293B"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 24"
+                    Padding="22">
+
+				<VerticalStackLayout Spacing="4">
+
+					<Label Text="Bibliothèque"
+                           FontSize="30"
+                           FontAttributes="Bold"
+                           TextColor="White"/>
+
+					<Label Text="Gestion des livres personnels"
+                           FontSize="13"
+                           TextColor="#94A3B8"/>
+
+				</VerticalStackLayout>
+
+			</Border>
+
+			<Border Style="{StaticResource CardStyle}">
+
+				<VerticalStackLayout Spacing="10">
+
+					<Label Text="Filtre de lecture"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="White"/>
+
+					<HorizontalStackLayout Spacing="12"
+                                            VerticalOptions="Center">
+
+						<Label Text="Afficher uniquement les lus"
+                               FontSize="15"
+                               TextColor="#E2E8F0"
+                               VerticalOptions="Center"/>
+
+						<Switch IsToggled="{Binding AfficherLusSeulement}"
+                                OnColor="#38BDF8"
+                                ThumbColor="White"/>
+					</HorizontalStackLayout>
+
+					<Label Text="Affiche uniquement les livres déjà terminés"
+                           FontSize="12"
+                           TextColor="#94A3B8"/>
+
+				</VerticalStackLayout>
+
+			</Border>
+
+			<CollectionView ItemsSource="{Binding LivresFiltres}"
+                            SelectionMode="None">
+
+				<CollectionView.ItemTemplate>
+					<DataTemplate x:DataType="models:Livre">
+
+						<Border Style="{StaticResource CardStyle}"
+                                Margin="0,0,0,12">
+
+							<Border.GestureRecognizers>
+								<TapGestureRecognizer
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.LivreSelectionneCommand}"
+                                    CommandParameter="{Binding .}" />
+							</Border.GestureRecognizers>
+
+							<VerticalStackLayout Spacing="10">
+
+								<Grid ColumnDefinitions="*,Auto">
+
+									<Label Grid.Column="0"
+                                           Text="{Binding Titre}"
+                                           FontSize="20"
+                                           FontAttributes="Bold"
+                                           TextColor="White"/>
+
+									<Border Grid.Column="1"
+                                            BackgroundColor="{Binding Genre, Converter={StaticResource GenreToColorConverter}}"
+                                            StrokeThickness="0"
+                                            StrokeShape="RoundRectangle 999"
+                                            Padding="10,4">
+
+										<Label Text="{Binding Genre}"
+                                               FontSize="12"
+                                               FontAttributes="Bold"
+                                               TextColor="White"/>
+									</Border>
+
+								</Grid>
+
+								<Label Text="{Binding Auteur}"
+                                       FontSize="15"
+                                       TextColor="#CBD5E1"/>
+
+								<BoxView HeightRequest="1"
+                                         BackgroundColor="#334155"
+                                         Opacity="0.6"/>
+
+								<HorizontalStackLayout Spacing="10">
+
+									<Label FontSize="13"
+                                           TextColor="#94A3B8">
+										<Label.FormattedText>
+											<FormattedString>
+												<Span Text="{Binding Annee}"/>
+											</FormattedString>
+										</Label.FormattedText>
+									</Label>
+
+									<Label Text="•"
+                                           TextColor="#64748B"/>
+
+									<Label FontSize="13"
+                                           Text="{Binding Lu, Converter={StaticResource BoolToStatusConverter}}"
+                                           TextColor="#38BDF8"/>
+
+								</HorizontalStackLayout>
+
+							</VerticalStackLayout>
+
+						</Border>
+
+					</DataTemplate>
+				</CollectionView.ItemTemplate>
+
+			</CollectionView>
+
+		</VerticalStackLayout>
+
+	</ScrollView>
+
+</ContentPage>

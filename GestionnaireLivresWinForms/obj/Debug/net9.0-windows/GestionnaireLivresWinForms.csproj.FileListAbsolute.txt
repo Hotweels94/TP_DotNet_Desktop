@@ -1,0 +1,14 @@
+C:\Tp_Gestionnaire_livre_dotnet\GestionnaireLivresWinForms\bin\Debug\net9.0-windows\GestionnaireLivresWinForms.exe
+C:\Tp_Gestionnaire_livre_dotnet\GestionnaireLivresWinForms\bin\Debug\net9.0-windows\GestionnaireLivresWinForms.deps.json
+C:\Tp_Gestionnaire_livre_dotnet\GestionnaireLivresWinForms\bin\Debug\net9.0-windows\GestionnaireLivresWinForms.runtimeconfig.json
+C:\Tp_Gestionnaire_livre_dotnet\GestionnaireLivresWinForms\bin\Debug\net9.0-windows\GestionnaireLivresWinForms.dll
+C:\Tp_Gestionnaire_livre_dotnet\GestionnaireLivresWinForms\bin\Debug\net9.0-windows\GestionnaireLivresWinForms.pdb
+C:\Tp_Gestionnaire_livre_dotnet\GestionnaireLivresWinForms\obj\Debug\net9.0-windows\GestionnaireLivresWinForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Tp_Gestionnaire_livre_dotnet\GestionnaireLivresWinForms\obj\Debug\net9.0-windows\GestionnaireLivresWinForms.AssemblyInfoInputs.cache
+C:\Tp_Gestionnaire_livre_dotnet\GestionnaireLivresWinForms\obj\Debug\net9.0-windows\GestionnaireLivresWinForms.AssemblyInfo.cs
+C:\Tp_Gestionnaire_livre_dotnet\GestionnaireLivresWinForms\obj\Debug\net9.0-windows\GestionnaireLivresWinForms.csproj.CoreCompileInputs.cache
+C:\Tp_Gestionnaire_livre_dotnet\GestionnaireLivresWinForms\obj\Debug\net9.0-windows\GestionnaireLivresWinForms.dll
+C:\Tp_Gestionnaire_livre_dotnet\GestionnaireLivresWinForms\obj\Debug\net9.0-windows\refint\GestionnaireLivresWinForms.dll
+C:\Tp_Gestionnaire_livre_dotnet\GestionnaireLivresWinForms\obj\Debug\net9.0-windows\GestionnaireLivresWinForms.pdb
+C:\Tp_Gestionnaire_livre_dotnet\GestionnaireLivresWinForms\obj\Debug\net9.0-windows\GestionnaireLivresWinForms.genruntimeconfig.cache
+C:\Tp_Gestionnaire_livre_dotnet\GestionnaireLivresWinForms\obj\Debug\net9.0-windows\ref\GestionnaireLivresWinForms.dll
